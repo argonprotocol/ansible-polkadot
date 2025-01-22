@@ -12,7 +12,7 @@ acl = private
 upload_cutoff = 1024M
 upload_concurrency = {{ node_backup_max_concurrent_requests }}
 chunk_size = 256M
-{% if node_backup_s3_provider == "Cloudflare" %}
+{% if node_backup_s3_provider == "Cloudflare" or node_backup_s3_provider == "DigitalOcean" %}
 no_check_bucket = true
 {% endif %}
 {% endif %}
